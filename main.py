@@ -13,12 +13,12 @@ from login import login
 br = login("14BCE0104","canttrustanyone")
 
 print br.geturl()
-if br.geturl()==("https://academics.vit.ac.in/student/home.asp"):
+if br.geturl()==("https://vtop.vit.ac.in/student/home.asp"):
 	print "SUCCESS"
 
 	
-	br.open("https://academics.vit.ac.in/student/getfacdet.asp?fac= ")
-	response = br.open("https://academics.vit.ac.in/student/getfacdet.asp?fac= ")
+	br.open("https://vtop.vit.ac.in/student/getfacdet.asp?fac= ")
+	response = br.open("https://vtop.vit.ac.in/student/getfacdet.asp?fac= ")
 
 	#selecting the form
 
@@ -41,7 +41,7 @@ if br.geturl()==("https://academics.vit.ac.in/student/home.asp"):
 		cells = row.findChildren('td')
 		cells = cells[0:4]
 		
-		links.append("https://academics.vit.ac.in/student/"+cells[3].find('a')['href'])
+		links.append("https://vtop.vit.ac.in/student/"+cells[3].find('a')['href'])
 
 	#print len(links)
 
@@ -75,7 +75,7 @@ if br.geturl()==("https://academics.vit.ac.in/student/home.asp"):
 
 		img = soup.findAll('img')
 
-		br.retrieve("https://academics.vit.ac.in/student/"+img[0]['src'], "fac_img.png")
+		br.retrieve("https://vtop.vit.ac.in/student/"+img[0]['src'], "fac_img.png")
 		pic = "fac_img.png"
 
 		with open(pic, 'rb') as input_file:
