@@ -15,7 +15,7 @@ def login(reg_no="",pwd=""):
 	br.set_handle_referer(True)
 
 	#opening website
-	response = br.open("https://academics.vit.ac.in/student/stud_login.asp")
+	response = br.open("https://vtop.vit.ac.in/student/stud_login.asp")
 	#print br.geturl()
 
 	#selecting the login form
@@ -27,7 +27,7 @@ def login(reg_no="",pwd=""):
 	print img['src']
 
 	#retrieving captcha image
-	br.retrieve("https://academics.vit.ac.in/student/"+img['src'], "captcha_student.bmp")
+	br.retrieve("https://vtop.vit.ac.in/student/"+img['src'], "captcha_student.bmp")
 	print "captcha retrieved"
 	img = Image.open("captcha_student.bmp")
 	parser = CaptchaParser()
